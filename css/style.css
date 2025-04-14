@@ -1,0 +1,424 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0a192f;
+  color: #ccd6f6;
+  line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+  background: rgba(10, 25, 47, 0.95);
+  padding: 1.2rem 2rem;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #64ffda;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul li a {
+  color: #ccd6f6;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #64ffda;
+}
+
+nav ul li a i {
+  margin-right: 0.5rem;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 25, 47, 0.9),
+    rgba(100, 255, 218, 0.1)
+  );
+  animation: fadeIn 1.5s ease-out;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  border: 2px solid #64ffda;
+  color: #64ffda;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #64ffda;
+  color: #0a192f;
+  transform: translateY(-3px);
+}
+
+/* About Section */
+#about {
+  padding: 6rem 2rem;
+  background: #112240;
+  text-align: center;
+}
+
+#about h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+#about h2::after {
+  content: "";
+  width: 50px;
+  height: 3px;
+  background: #64ffda;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.about-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-content img {
+  border-radius: 10px;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border: 3px solid #64ffda;
+  animation: float 3s ease-in-out infinite;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  max-width: 600px;
+}
+
+/* Skills Section */
+#skills {
+  padding: 6rem 2rem;
+  background: #0a192f;
+  text-align: center;
+}
+
+#skills h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+#skills h2::after {
+  content: "";
+  width: 50px;
+  height: 3px;
+  background: #64ffda;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.skills-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.skill-card {
+  background: #112240;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 150px;
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  background: #1d2b53;
+}
+
+.skill-card i {
+  font-size: 2.5rem;
+  color: #64ffda;
+  margin-bottom: 1rem;
+}
+
+.skill-card h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* Projects Section */
+#projects {
+  padding: 6rem 2rem;
+  background: #112240;
+  text-align: center;
+}
+
+#projects h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+#projects h2::after {
+  content: "";
+  width: 50px;
+  height: 3px;
+  background: #64ffda;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background: #1d2b53;
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: calc(25% - 1.5rem); /* Har bir qatorda 4 ta loyiha */
+  text-align: left;
+  transition: all 0.3s ease;
+  min-height: 200px; /* Kartalar balandligi muvozanatlash uchun */
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 5px 20px rgba(56, 189, 248, 0.2);
+  /* Fon rangi o‘zgarmaydi, faqat transform va shadow qoladi */
+}
+
+.project-card h3 {
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.project-links a {
+  color: #64ffda;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.project-links a:hover {
+  color: #fff;
+}
+
+.project-links a i {
+  margin-right: 0.5rem;
+}
+
+/* Contact Section */
+#contact {
+  padding: 6rem 2rem;
+  background: #0a192f;
+  text-align: center;
+}
+
+#contact h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+#contact h2::after {
+  content: "";
+  width: 50px;
+  height: 3px;
+  background: #64ffda;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.contact-container a {
+  color: #ccd6f6;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.contact-container a:hover {
+  color: #64ffda;
+}
+
+.contact-container a i {
+  margin-right: 0.5rem;
+}
+
+/* Footer */
+footer {
+  padding: 2rem;
+  text-align: center;
+  background: #112240;
+  color: #ccd6f6;
+}
+
+footer i {
+  color: #64ffda;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .project-card {
+    width: calc(33.33% - 1.5rem); /* Kichikroq ekranlarda 3 ta loyiha */
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-content img {
+    margin-bottom: 1rem;
+  }
+
+  .project-card {
+    width: calc(50% - 1.5rem); /* Mobil ekranlarda 2 ta loyiha */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .btn {
+    padding: 0.8rem 1.5rem;
+  }
+
+  .skill-card {
+    width: 120px;
+  }
+
+  .project-card {
+    width: 100%; /* Eng kichik ekranlarda 1 ta loyiha */
+  }
+}
